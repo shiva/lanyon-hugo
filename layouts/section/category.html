@@ -1,0 +1,16 @@
+{{ partial "default_head.html" . }}
+
+<div class="post">
+  <h1 class="post-title">Archives</h1>
+  {{ range .Data.Pages.GroupByDate "2006" }}
+  <h3>{{ .Key }}</h3>
+  <ul id="list">
+      {{ range .Pages }}
+        {{ .Render "li"}}
+      {{ end }}
+  </ul>
+  {{ end }}
+
+</div>
+
+{{ partial "default_foot.html" . }}
